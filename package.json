@@ -9,6 +9,8 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "jest-matcher-deep-close-to": "^2.0.1",
+    "validate": "^5.1.0"
   }
 }
