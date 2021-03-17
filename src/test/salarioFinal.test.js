@@ -18,4 +18,18 @@ describe('Salario Final', () => {
         expect(errors[2]).toBe(undefined)
         expect(errors[3]).toBe(undefined)
     })
+
+    test('Testando um funcionário inválido', () => {
+        funcionario = {
+            nome: "Lu",
+            email: "leaozinho_leao",
+            salarioBase: "3000.00"
+        }
+
+        errors = validate.validate(funcionario)
+        expect(errors[0]).toBe(undefined)
+        expect(errors[1]).toBe(undefined)
+        expect(errors[2]).toBe(undefined)
+        expect(errors[3]).toBe(undefined)
+    })
 })
