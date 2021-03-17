@@ -4,6 +4,7 @@ const Funcionario = require('../model/funcionario')
 const salarioFinal = require('../main/salarioFinal')
 
 describe('Salario Final', () => {
+    expect.extend({ toBeDeepCloseTo })
     let funcionario, errors
 
     test('Testando um funcionário válido', () => {
