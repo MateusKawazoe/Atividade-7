@@ -1,16 +1,12 @@
-const validate = require('../model/funcionario')
+const validate = require('../validate/funcionario')
+const Funcionario = require('../model/funcionario')
 const salarioFinal = require('../main/salarioFinal')
 
 describe('Salario Final', () => {
     let funcionario, errors
 
     test('Testando um funcionário válido', () => {
-        funcionario = {
-            nome: "Lucas",
-            email: "leaozinho_leao@hotmail.com",
-            salarioBase: 3000.00,
-            cargo: "Desenvolvedor"
-        }
+        funcionario = new Funcionario('Lucas', 'leaozinho_leao@hotmail.com', 3000.00, 'Desenvolvedor')
 
         errors = validate.validate(funcionario)
         expect(errors[0]).toBe(undefined)
@@ -20,11 +16,7 @@ describe('Salario Final', () => {
     })
 
     test('Testando um funcionário inválido', () => {
-        funcionario = {
-            nome: "Lu",
-            email: "leaozinho_leao",
-            salarioBase: "3000.00"
-        }
+        funcionario = new Funcionario('Lu', 'leaozinho_leao', '3000.00')
 
         errors = validate.validate(funcionario)
         expect(errors[0].message).toBe('Nome é obrigatório e deve ter no mínimo 3 letras e no máximo 45!')
