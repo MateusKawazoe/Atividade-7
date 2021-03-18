@@ -70,4 +70,6 @@ describe('Salario Final', () => {
         funcionario = new Funcionario('Lucas', 'leaozinho_leao@hotmail.com', 4911.00, 'LUCAS')
         expect('Cargo não existe!').toBe(salarioFinal(funcionario.cargo, funcionario.salarioBase))
     })
+
+    //
 })
